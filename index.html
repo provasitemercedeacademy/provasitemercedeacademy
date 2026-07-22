@@ -617,7 +617,12 @@
         <span onclick="navigateTo('classifica'); closeAllDropdowns()">🏆 Classifica Punti</span>
     </div>
 </div>
-		<span class="nav-item" onclick="navigateTo('altro')"><strong><u>Altro</u></strong></span>
+		<div style="position: relative; display: flex; align-items: center;">
+    <span class="nav-item" onclick="toggleAltro(event)"><strong><u>Altro ▼</u></strong></span>
+    <div class="user-dropdown" id="altro-dropdown" style="top: 45px; right: auto; left: 0;">
+        <span onclick="navigateTo('altro'); closeAllDropdowns()">🛒 Work in Progress</span>
+    </div>
+</div>
     </nav>
     
     <!-- HAMBURGER (solo mobile) -->
@@ -1308,6 +1313,7 @@ function adminDeleteUser(name) {
 }
 
     function toggleCategories(e) { e.stopPropagation(); toggleEl('categories-dropdown'); }
+    function toggleAltro(e) { e.stopPropagation(); toggleEl('altro-dropdown'); }
     function toggleUserMenu(e) { e.stopPropagation(); toggleEl('user-dropdown'); }
     function toggleEl(id) {
         const el = document.getElementById(id);
